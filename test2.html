@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TG Copilot | Fixed Layout</title>
+    <title>TG Copilot | Bulk Telegram Ads at Scale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,13 +11,14 @@
         :root {
             --primary-blue: #007BFF;
             --primary-dark: #050505;
+            --bg-gray: #FFFFFF;
+            --success-green: #10B981;
         }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--primary-dark);
             color: #FFFFFF;
-            margin: 0;
-            overflow-x: hidden; /* Side scroll rokne ke liye */
+            scroll-behavior: smooth;
         }
         .glass-nav {
             background: rgba(5, 5, 5, 0.8);
@@ -27,15 +28,64 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
         }
-        /* Animations for Ads UI */
-        @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
-        @keyframes progress { 0% { width: 0%; } 80% { width: 100%; opacity: 1; } 100% { width: 100%; opacity: 0; } }
-        @keyframes bar { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.6); } }
+        .glass-card:hover {
+            border-color: var(--primary-blue);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 123, 255, 0.1) 0%, transparent 60%);
+        }
+        .btn-primary {
+            background-color: var(--primary-blue);
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover { transform: scale(1.05); }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        footer {
+    background-color: #050505; /* Deep Dark Background */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-glow {
+    background: radial-gradient(35% 128px at 50% 0%, rgba(0, 123, 255, 0.1), transparent);
+}
+
+.footer-link-heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-decoration: underline;
+    text-decoration-color: #007BFF;
+    text-underline-offset: 8px;
+}
+
+.footer-cta-btn {
+    background: #007BFF;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.footer-cta-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
     </style>
 </head>
 <body>
-
 
     <!-- 1. Navbar (Separate Component) -->
     <nav class="fixed top-0 w-full z-[100] glass-nav">
@@ -344,7 +394,7 @@
 
  
     <!-- Footer Section Start -->
-<footer class="relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,123,255,0.1),transparent)] px-6 py-16 lg:py-20 mt-20 text-white overflow-hidden">
+<footer class="relative w-full l mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,123,255,0.1),transparent)] px-6 py-16 lg:py-20 mt-20 text-white overflow-hidden">
     
     <!-- Top Glow Line -->
     <div class="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 bg-blue-500/30 blur-md"></div>
