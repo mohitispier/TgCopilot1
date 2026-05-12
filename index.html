@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Copilot | Bulk Telegram Ads at Scale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #007BFF;
+            --primary-dark: #050505;
+            --bg-gray: #FFFFFF;
+            --success-green: #10B981;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--primary-dark);
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: var(--primary-blue);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 123, 255, 0.1) 0%, transparent 60%);
+        }
+        .btn-primary {
+            background-color: var(--primary-blue);
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover { transform: scale(1.05); }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        footer {
+    background-color: #050505; /* Deep Dark Background */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-glow {
+    background: radial-gradient(35% 128px at 50% 0%, rgba(0, 123, 255, 0.1), transparent);
+}
+
+.footer-link-heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-decoration: underline;
+    text-decoration-color: #007BFF;
+    text-underline-offset: 8px;
+}
+
+.footer-cta-btn {
+    background: #007BFF;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.footer-cta-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navbar (Separate Component) -->
+    <nav class="fixed top-0 w-full z-[100] glass-nav">
+        <div class="max-w-[1280px] mx-auto px-10 py-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-[#007BFF] rounded-md flex items-center justify-center">
+                    <i data-lucide="zap" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">TG Copilot</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-[16px] font-medium text-gray-400">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#workflow" class="hover:text-white transition">How it Works</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-gray-400 font-medium hover:text-white transition">Login</a>
+                <button class="btn-primary px-6 py-2.5 rounded-lg font-bold text-sm">Start Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section class="relative pt-48 pb-32 px-10 hero-glow overflow-hidden">
+        <div class="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h1 class="text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
+                    Create, Manage & Launch <span class="text-[#007BFF]">Telegram Ads</span> at Scale
+                </h1>
+                <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                    Turn hours of repetitive ad creation into a fast and structured workflow. TG Copilot helps you generate, organize and deploy bulk Telegram ad campaigns with clarity and control.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="btn-primary px-8 py-4 rounded-xl font-bold text-lg">Try TG Copilot Now</button>
+                    <button class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">See Demo</button>
+                </div>
+                <div class="flex items-center gap-6 text-sm text-gray-500 font-medium">
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Start faster</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Launch more</span>
+                    <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-green-500"></i> Scale without chaos</span>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="glass-card rounded-2xl p-4 rotate-2 shadow-2xl border-white/10">
+                    <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80" alt="Dashboard Mockup" class="rounded-xl grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Problem -> Solution Section -->
+    <section class="py-24 px-10 bg-[#0A0A0A]">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-red-500/80">The Problem</h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                            <i data-lucide="x-circle" class="text-red-500 shrink-0"></i>
+                            <p class="text-gray-300">Manual ad creation takes hours of repetitive work.</p>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                            <i data-lucide="x-circle" class="text-red-500 shrink-0"></i>
+                            <p class="text-gray-300">Messy execution leads to missing links and errors.</p>
+                        </div>
+                        <div class="flex gap-4 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                            <i data-lucide="x-circle" class="text-red-500 shrink-0"></i>
+                            <p class="text-gray-300">Scaling becomes disorganized and overwhelming.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold leading-tight italic">TG Copilot turns this into a <span class="text-green-500">structured workflow.</span></h2>
+                    <p class="text-gray-400 text-lg">
+                        Instead of working harder, you work smarter with a system built for scale. We remove the friction, giving you speed without losing control.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Features Grid -->
+    <section id="features" class="py-32 px-10">
+        <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold mb-4 uppercase tracking-widest text-[#007BFF]">Features</h2>
+                <p class="text-gray-500">Designed for scale, built for clarity.</p>
+            </div>
+            <div class="feature-grid">
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <i data-lucide="layers" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Bulk Ad Creation Engine</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Generate multiple ads in a single flow. Input details once, expand into structured ad sets instantly.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <i data-lucide="sparkles" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Smart Ad Variation Generator</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Automated headlines and descriptions for consistency. Test different messaging angles without starting from zero.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <i data-lucide="layout" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Centralized Dashboard</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">View all campaigns and track live ads in one place. No more scattered files or lost versions.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <i data-lucide="shield-check" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Error Prevention Layer</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Reduces risks of missing links and wrong formatting by keeping entries structured and consistent.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <i data-lucide="test-tube" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Multi Ad Testing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Identify winning ads quickly. Launch variations instantly and compare performance faster.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass-card p-8 rounded-2xl border-blue-500/20">
+                    <i data-lucide="bar-chart" class="text-[#007BFF] w-10 h-10 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">Built for Scale</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Whether it's 5 or 500+ ads, our system remains smooth. It grows with your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. How It Works (Workflow) -->
+    <section id="workflow" class="py-24 px-10 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-[1280px] mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-16">How TG Copilot Works</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12 relative">
+                <!-- Step 1 -->
+                <div class="flex-1 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] font-bold text-xl mb-6 group-hover:bg-[#007BFF] group-hover:text-white transition">1</div>
+                    <h4 class="font-bold mb-2">Define Campaign</h4>
+                    <p class="text-gray-500 text-sm">Input links, audience and core message once.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex-1 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] font-bold text-xl mb-6 group-hover:bg-[#007BFF] group-hover:text-white transition">2</div>
+                    <h4 class="font-bold mb-2">Generate Ads</h4>
+                    <p class="text-gray-500 text-sm">System creates multiple headlines and angles.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex-1 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] font-bold text-xl mb-6 group-hover:bg-[#007BFF] group-hover:text-white transition">3</div>
+                    <h4 class="font-bold mb-2">Customize</h4>
+                    <p class="text-gray-500 text-sm">Review, edit or remove variations easily.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex-1 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full bg-[#007BFF]/10 flex items-center justify-center text-[#007BFF] font-bold text-xl mb-6 group-hover:bg-[#007BFF] group-hover:text-white transition">4</div>
+                    <h4 class="font-bold mb-2">Launch</h4>
+                    <p class="text-gray-500 text-sm">Deploy ads in bulk without manual repetition.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex-1 flex flex-col items-center group">
+                    <div class="w-16 h-16 rounded-full border border-[#007BFF]/30 flex items-center justify-center text-[#007BFF] font-bold text-xl mb-6 group-hover:bg-green-500 group-hover:text-white transition">5</div>
+                    <h4 class="font-bold mb-2 text-[#007BFF]">Optimize</h4>
+                    <p class="text-gray-500 text-sm">Identify winners and improve performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Comparison Section -->
+    <section class="py-32 px-10">
+        <div class="max-w-[800px] mx-auto overflow-hidden rounded-3xl border border-white/10">
+            <div class="grid grid-cols-2">
+                <div class="bg-red-500/5 p-12 border-r border-white/5">
+                    <h4 class="text-xl font-bold mb-8 text-red-400">Manual Ads</h4>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li class="flex items-center gap-2">❌ Time-consuming</li>
+                        <li class="flex items-center gap-2">❌ Repetitive</li>
+                        <li class="flex items-center gap-2">❌ Disorganized</li>
+                    </ul>
+                </div>
+                <div class="bg-green-500/5 p-12">
+                    <h4 class="text-xl font-bold mb-8 text-green-400">TG Copilot</h4>
+                    <ul class="space-y-4 text-gray-100 text-sm">
+                        <li class="flex items-center gap-2 font-semibold">✅ Fast Execution</li>
+                        <li class="flex items-center gap-2 font-semibold">✅ Structured Flow</li>
+                        <li class="flex items-center gap-2 font-semibold">✅ Scalable System</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Strong CTA -->
+    <section class="py-32 px-10 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#007BFF]/10 blur-[150px] -z-10"></div>
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">Create More Ads. In Less Time.</h2>
+            <p class="text-gray-400 mb-10 text-lg">Stop creating ads manually. Start scaling smartly with TG Copilot today.</p>
+            <button class="btn-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-blue-500/20">Start Using TG Copilot Today</button>
+        </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section id="faq" class="py-24 px-10">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center underline decoration-[#007BFF] underline-offset-8">FAQs</h2>
+            <div class="space-y-4">
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Is TG Copilot only for experts?
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">No. It’s designed to be simple. Beginners can use it easily while experienced marketers benefit from speed and structure.</p>
+                </details>
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Can I create hundreds of ads at once?
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">Yes. The system is built for bulk creation and handles large volumes efficiently.</p>
+                </details>
+                <details class="glass-card p-6 rounded-xl cursor-pointer group">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Do I have control over ad content?
+                        <i data-lucide="chevron-down" class="group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">Yes. Every generated ad can be edited before publishing. You stay in the driver's seat.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Footer Section Start -->
+<footer class="relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,123,255,0.1),transparent)] px-6 py-16 lg:py-20 mt-20 text-white overflow-hidden">
+    
+    <!-- Top Glow Line -->
+    <div class="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 bg-blue-500/30 blur-md"></div>
+
+    <div class="grid w-full gap-12 xl:grid-cols-3 xl:gap-16">
+        <!-- Brand & CTA Column -->
+        <div class="space-y-6">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i data-lucide="send" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">TG <span class="text-blue-500">Copilot</span></span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Telegram marketing ko scale karne ka sabse organized aur fast system. Bulk ads, smart logic, aur chaos-free scaling.
+            </p>
+            
+            <!-- CTA Button -->
+            <div class="pt-4">
+                <a href="#" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all group shadow-lg shadow-blue-600/10">
+                    Get Started Free
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">
+                © 2026 TG Copilot. All rights reserved.
+            </p>
+        </div>
+
+        <!-- Links Grid -->
+        <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+            <!-- Product -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Product</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Bulk Ad Engine</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Smart Generator</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
+                    <li><a href="#pricing" class="hover:text-blue-400 transition-colors">Pricing</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Company</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#faq" class="hover:text-blue-400 transition-colors">FAQs</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Resources</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Ads Guide</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Help Center</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">API Docs</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Social</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i> Youtube</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts for Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
