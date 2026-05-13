@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Copilot® | Cinematic Experience</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: 201 100% 13%; /* Deep Navy */
+            --foreground: 0 0% 100%;
+            --muted-foreground: 240 4% 66%;
+            --font-display: 'Instrument Serif', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: hsl(201, 100%, 13%);
+            color: hsl(var(--foreground));
+            overflow-x: hidden;
+        }
+
+        /* Video Background */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay to ensure text readability */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: hsl(var(--muted-foreground));
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: white;
+        }
+
+        /* Liquid Glass Button */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: none;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            position: relative;
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .liquid-glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1.4px;
+            background: linear-gradient(180deg, 
+                rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.1) 40%, 
+                rgba(255,255,255,0.45) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .liquid-glass:hover {
+            transform: scale(1.03);
+        }
+
+        /* Hero Content */
+        .hero {
+            position: relative;
+            z-index: 10;
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: -2.46px;
+            max-width: 1100px;
+            font-weight: 400;
+            animation: fade-rise 0.8s ease-out both;
+        }
+
+        h1 em {
+            font-style: normal;
+            color: hsl(var(--muted-foreground));
+        }
+
+        .subtext {
+            color: hsl(var(--muted-foreground));
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin-top: 2rem;
+            line-height: 1.6;
+            animation: fade-rise 0.8s ease-out 0.2s both;
+        }
+
+        .cta-main {
+            margin-top: 3rem;
+            padding: 1.25rem 3.5rem;
+            font-size: 1rem;
+            animation: fade-rise 0.8s ease-out 0.4s both;
+        }
+
+        /* Animations */
+        @keyframes fade-rise {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <div class="overlay"></div>
+        <video autoplay loop muted playsinline>
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <nav>
+        <div class="logo">TG Copilot<sup>®</sup></div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Features</a>
+            <a href="#">How it Works</a>
+            <a href="#">FAQ</a>
+            <a href="#">Pricing </a>
+        </div>
+        <button class="liquid-glass">Begin Journey</button>
+    </nav>
+
+    <main class="hero">
+        <h1>Walcome <em>To</em> TG Copilot <br> <em>at absolute scale.</em></h1>
+        <p class="subtext">
+            The all-in-one automation engine for Telegram marketers. Generate variations, manage bulk ad campaigns, and scale your audience without the manual chaos.
+        </p>
+        <button class="liquid-glass cta-main">Begin Journey</button>
+    </main>
+
+</body>
+</html>
