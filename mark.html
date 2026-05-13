@@ -1,0 +1,455 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Telegram Ad Marketplace | TG Copilot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#10131b",
+                        "on-tertiary-container": "#4c1a00",
+                        "surface-container": "#1c2027",
+                        "on-surface": "#e0e2ed",
+                        "surface-variant": "#31353d",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2d3039",
+                        "primary-container": "#adc7ff",
+                        "on-secondary-container": "#00686f",
+                        "surface-container-highest": "#31353d",
+                        "surface-bright": "#363942",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary": "#ffb695",
+                        "on-primary": "#001a41",
+                        "primary": "#adc7ff",
+                        "tertiary-container": "#ef6719",
+                        "outline": "#8b90a0",
+                        "on-surface-variant": "#c1c6d7",
+                        "on-background": "#e0e2ed",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#7df4ff",
+                        "on-error": "#690005",
+                        "background": "#0b0e16",
+                        "surface-container-lowest": "#0b0e16",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "inverse-primary": "#005bc0",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-container-low": "#181c23",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-tertiary": "#571e00",
+                        "on-secondary": "#00363a",
+                        "on-primary-container": "#00285b",
+                        "secondary": "#d3fbff",
+                        "outline-variant": "#414754",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container-high": "#272a32",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-secondary-fixed": "#002022",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "secondary-container": "#00eefc",
+                        "on-tertiary-fixed": "#351000",
+                        "on-primary-fixed-variant": "#004493",
+                        "inverse-surface": "#e0e2ed",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#adc7ff",
+                        "surface": "#10131b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-mono": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        body {
+            background-color: #0b0e16;
+            color: #e0e2ed;
+        }
+        .glass-card {
+            background: #181c23;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #adc7ff;
+            box-shadow: 0 0 40px rgba(173, 199, 255, 0.08);
+            transform: scale(1.01) translateY(-2px);
+        }
+        .neon-line {
+            background: linear-gradient(90deg, transparent, #adc7ff, transparent);
+            height: 1px;
+            width: 100%;
+            opacity: 0.2;
+        }
+        .glow-text {
+            text-shadow: 0 0 30px rgba(173, 199, 255, 0.2);
+        }
+    </style>
+<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style><style>
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  50% { transform: translate(-20px, -40px); opacity: 0.6; }
+}
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.1); opacity: 0.6; }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -100; }
+}
+.bg-bubble {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+.data-flow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.1;
+}
+.flow-line {
+  stroke: #adc7ff;
+  stroke-width: 1;
+  stroke-dasharray: 5, 15;
+  animation: dash-flow 10s linear infinite;
+}
+</style></head>
+<body class="font-body-md selection:bg-primary/30"><div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+  <div class="bg-bubble w-[500px] h-[500px] bg-primary/20 top-[-10%] left-[-10%] animate-[pulse-slow_8s_infinite]"></div>
+  <div class="bg-bubble w-[600px] h-[600px] bg-surface-bright/30 bottom-[-20%] right-[-10%] animate-[float_15s_infinite]"></div>
+  <div class="bg-bubble w-[400px] h-[400px] bg-primary/10 top-[40%] right-[10%] animate-[pulse-slow_12s_infinite]"></div>
+  <svg class="data-flow-container" viewBox="0 0 1440 1000" preserveAspectRatio="none">
+    <path class="flow-line" d="M-100,200 Q400,100 800,300 T1540,200" fill="none"></path>
+    <path class="flow-line" d="M-100,500 Q300,600 700,400 T1540,500" fill="none" style="animation-delay: -2s;"></path>
+    <path class="flow-line" d="M-100,800 Q500,700 900,900 T1540,800" fill="none" style="animation-delay: -5s;"></path>
+  </svg>
+</div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-white/5 bg-surface/80">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex justify-between items-center">
+<div class="text-xl font-bold tracking-tighter text-on-surface flex-shrink-0">TG Copilot</div>
+<!-- Centered Desktop Nav -->
+<div class="hidden lg:flex flex-grow justify-center">
+<div class="flex items-center gap-10">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-medium text-sm" href="#">Home</a>
+<a class="text-on-surface font-bold border-b-2 border-primary pb-1 text-sm relative" href="#">
+                        Marketplace
+                    </a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-medium text-sm" href="#">Channels</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-medium text-sm" href="#">Automation</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-medium text-sm" href="#">Engine</a>
+</div>
+</div>
+<div class="flex items-center gap-6 flex-shrink-0">
+<div class="hidden lg:flex items-center gap-6">
+<button class="text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Login</button>
+<button class="px-6 py-2.5 bg-primary rounded-lg text-sm font-bold active:scale-95 transition-all shadow-[0_0_20px_rgba(173,199,255,0.2)] hover:shadow-[0_0_30px_rgba(173,199,255,0.4)] text-white" style="background-color: #007bff;">Get Started</button>
+</div>
+<!-- Hamburger Menu Button -->
+<button class="lg:hidden text-on-surface p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-surface z-[60] flex flex-col p-margin-mobile invisible opacity-0 lg:hidden transition-all duration-300" id="mobile-menu-overlay">
+<div class="flex justify-between items-center mb-12">
+<div class="text-xl font-bold tracking-tighter text-on-surface">TG Copilot</div>
+<button class="text-on-surface p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-8 mb-12">
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-2xl text-primary font-bold" href="#">Marketplace</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Channels</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Automation</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Engine</a>
+</div>
+<div class="flex flex-col gap-4 mt-auto">
+<button class="w-full py-4 rounded-xl border border-outline-variant text-on-surface font-medium">Login</button>
+<button class="w-full py-4 bg-primary rounded-xl font-bold text-white" style="background-color: #007bff;">Get Started</button>
+</div>
+</div>
+<script>
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobile-menu-overlay');
+            overlay.classList.toggle('invisible');
+            overlay.classList.toggle('opacity-0');
+        }
+    </script>
+<main class="pt-32 pb-20 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 text-center relative animate-fade-in-up">
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary font-medium text-xs tracking-widest mb-8 uppercase">
+                    AD MARKETPLACE v2.0
+                </span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-[80px] text-on-surface mb-8 tracking-tight glow-text font-extrabold leading-[1.1]">
+                    Telegram Ad Marketplace
+                </h1>
+<p class="font-body-lg text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                    The premium solution to buy, manage and run ads across Telegram channels. Harness the power of intelligent targeting and architectural precision.
+                </p>
+<button class="px-12 py-5 bg-primary rounded-xl font-bold text-lg hover:shadow-[0_0_40px_rgba(173,199,255,0.4)] transition-all active:scale-95 text-white" style="background-color: #007bff;">
+                    Complete KYC to Access
+                </button>
+</div>
+</section>
+<!-- Bento Grid: KYC & Pricing -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 animate-fade-in-up" style="animation-delay: 0.2s;">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- KYC Section -->
+<div class="lg:col-span-7 glass-card p-10 md:p-14 rounded-[32px] flex flex-col justify-between overflow-hidden relative animate-fade-in-up bg-surface-container" style="animation-delay: 0.1s;">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/10 flex items-center justify-center mb-10">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-6">KYC Verification</h2>
+<p class="text-lg text-on-surface-variant mb-10 max-w-md leading-relaxed">
+                            Identity verification is mandatory to maintain the integrity of our high-tech advertising ecosystem.
+                        </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8">
+<li class="flex items-center gap-3 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Ensures genuine users
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Prevents fraud
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Secure environment
+                            </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Builds trust
+                            </li>
+</ul>
+</div>
+<div class="absolute -right-16 -bottom-16 opacity-[0.03]">
+<span class="material-symbols-outlined text-[320px]" style="font-variation-settings: 'wght' 100;">admin_panel_settings</span>
+</div>
+</div>
+<!-- Pricing Card -->
+<div class="lg:col-span-5 glass-card p-10 md:p-14 rounded-[32px] flex flex-col items-center text-center justify-center relative animate-fade-in-up bg-surface-container" style="animation-delay: 0.2s;">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(173,199,255,0.03),transparent_60%)]"></div>
+<span class="text-xs font-bold text-primary mb-4 tracking-[0.2em] uppercase">RENTAL MODEL</span>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-6xl md:text-7xl font-extrabold text-on-surface tracking-tighter">$99</span>
+<span class="text-xl text-on-surface-variant font-medium">/month</span>
+</div>
+<div class="w-full h-px bg-white/5 my-10"></div>
+<div class="bg-primary/5 border border-primary/10 p-8 rounded-2xl w-full">
+<span class="text-xs font-bold text-primary block mb-3 tracking-[0.15em] uppercase">SPECIAL BENEFIT</span>
+<p class="text-lg text-on-surface font-bold mb-2">
+                            Ad Creation Engine included for free
+                        </p>
+<p class="text-sm text-on-surface-variant">($0.5/ad fee waived for subscribers)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 animate-fade-in-up" style="animation-delay: 0.4s;">
+<div class="mb-16">
+<h2 class="text-3xl md:text-5xl font-bold text-on-surface mb-4">Key Features &amp; Benefits</h2>
+<p class="text-on-surface-variant text-lg">Engineered for architectural precision in ad delivery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-10 rounded-[32px] group bg-surface-container">
+<div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 transition-colors group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Centralized Management</h3>
+<p class="text-on-surface-variant leading-relaxed">Control all your campaigns across thousands of channels from a single, high-fidelity command center.</p>
+</div>
+<div class="glass-card p-10 rounded-[32px] group bg-surface-container">
+<div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 transition-colors group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Faster Placement</h3>
+<p class="text-on-surface-variant leading-relaxed">Reduce time-to-market with our optimized routing protocols and instant channel matchmaking engine.</p>
+</div>
+<div class="glass-card p-10 rounded-[32px] group bg-surface-container">
+<div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 transition-colors group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary text-3xl">auto_mode</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">Time-saving Automation</h3>
+<p class="text-on-surface-variant leading-relaxed">Automate repetitive tasks with TG Copilot’s intelligent architect, focusing your energy on strategy scaling.</p>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 animate-fade-in-up" style="animation-delay: 0.6s;">
+<h2 class="text-3xl md:text-5xl font-bold text-on-surface text-center mb-24">How It Works</h2>
+<div class="relative">
+<div class="hidden md:block absolute top-8 left-0 w-full neon-line"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#0b0e16] border-2 border-primary flex items-center justify-center text-primary font-bold text-xl mb-8 shadow-[0_0_25px_rgba(173,199,255,0.3)]">1</div>
+<h4 class="text-xl font-bold text-on-surface mb-3">Complete KYC</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Verify your identity securely in minutes.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#181c23] border border-white/10 flex items-center justify-center text-on-surface-variant font-bold text-xl mb-8">2</div>
+<h4 class="text-xl font-bold text-on-surface mb-3">Subscribe</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Choose the $99/mo rental model for full access.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#181c23] border border-white/10 flex items-center justify-center text-on-surface-variant font-bold text-xl mb-8">3</div>
+<h4 class="text-xl font-bold text-on-surface mb-3">Access Channels</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Browse our verified premium database.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#181c23] border border-white/10 flex items-center justify-center text-on-surface-variant font-bold text-xl mb-8">4</div>
+<h4 class="text-xl font-bold text-on-surface mb-3">Create Ads</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Use the free high-perf creation engine.</p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-[#181c23] border border-white/10 flex items-center justify-center text-on-surface-variant font-bold text-xl mb-8">5</div>
+<h4 class="text-xl font-bold text-on-surface mb-3">Launch</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Execute your campaigns with one click.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Target Audience Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 animate-fade-in-up" style="animation-delay: 0.8s;">
+<div class="glass-card rounded-[40px] p-10 md:p-20 flex flex-col md:flex-row gap-20 items-center overflow-hidden bg-surface-container">
+<div class="md:w-1/2">
+<h2 class="text-[40px] md:text-[64px] font-extrabold text-on-surface leading-[1.1] mb-12 tracking-tight">Designed for Scale.</h2>
+<div class="space-y-12">
+<div class="flex items-start gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Digital Marketers</h4>
+<p class="text-on-surface-variant leading-relaxed text-lg">Professionalize your Telegram outreach with data-driven precision.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Marketing Agencies</h4>
+<p class="text-on-surface-variant leading-relaxed text-lg">White-label ready infrastructure for managing client portfolios at scale.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Growing Businesses</h4>
+<p class="text-on-surface-variant leading-relaxed text-lg">Scale fast with high-intent audiences on the world's most dynamic messenger.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full h-[500px] rounded-[32px] overflow-hidden group">
+<div class="w-full h-full bg-[#181c23] border border-white/5 relative overflow-hidden rounded-[32px]">
+<img alt="Data Visualization" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi9OUePujSrNi8UEWvoW6PRtdkD3fvPv2Vx1PcuDIs6X4tyCYiGG6s4FtqxpvluxnxnEoWF_xb99b4e4hwtxwkkVuFtB02rL2kO09DuGwkqTaWp510T88PUfB5RNqdngE7PNMrWReemwbGiGv0BMvaig8jjCx9aJ7jJwL0Hduvm3flxfTAdZSi7eWkxzNS8XUrKEP9_8dlno6nz28nfS7kUU57Ktiefqno5dOcOutGlxv67WuhZvatLzr3wZ_7UAnvb7PDWIZaGhY">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0b0e16] via-transparent to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-40 animate-fade-in-up" style="animation-delay: 0.6s;">
+<div class="bg-[#adc7ff] p-12 md:p-24 rounded-[48px] text-center text-[#001a41] relative overflow-hidden shadow-[0_0_80px_rgba(173,199,255,0.1)]">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent_70%)]"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight">Ready to Architect Your Success?</h2>
+<p class="text-xl md:text-2xl mb-14 opacity-80 max-w-2xl mx-auto leading-relaxed">
+                        Join the elite circle of advertisers using TG Copilot to dominate the Telegram ecosystem. Complete your KYC now to gain instant access.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="px-12 py-5 bg-[#001a41] text-white rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-xl">
+                            Start KYC Verification
+                        </button>
+<button class="px-12 py-5 bg-transparent border-2 border-[#001a41]/20 text-[#001a41] rounded-2xl font-bold text-lg hover:bg-[#001a41]/5 transition-all">
+                            View Documentation
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-mobile md:px-margin-desktop bg-[#0b0e16] border-t border-white/5">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+<div class="text-2xl font-bold tracking-tighter text-on-surface">TG Copilot</div>
+<p class="text-on-surface-variant font-medium opacity-60">© 2024 TG Copilot. The Intelligent Architect of Telegram Ads.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">API Docs</a>
+<a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Support</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>
