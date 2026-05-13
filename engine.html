@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="dark" lang="en" style=""><head><style data-stitch-cursor="">
+<!DOCTYPE html><html class="dark" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><style data-stitch-cursor="">
   @keyframes float-bubble {
     0% { transform: translate(0, 0) scale(1); }
     50% { transform: translate(50px, 100px) scale(1.1); }
@@ -79,47 +79,7 @@
   .glass-card:hover {
     box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
   }
-</style><style data-stitch-cursor="">
-  @keyframes float-bubble {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(50px, 100px) scale(1.1); }
-    100% { transform: translate(-30px, 50px) scale(0.9); }
-  }
-  @keyframes data-flow {
-    from { transform: translateY(0); }
-    to { transform: translateY(100px); }
-  }
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-  }
-  .glass-card {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
-  }
-  .glass-card:hover {
-    box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
-  }
-</style><style data-stitch-scroll-lock="">
-  @keyframes float-bubble {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(50px, 100px) scale(1.1); }
-    100% { transform: translate(-30px, 50px) scale(0.9); }
-  }
-  @keyframes data-flow {
-    from { transform: translateY(0); }
-    to { transform: translateY(100px); }
-  }
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
-  }
-  .glass-card {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
-  }
-  .glass-card:hover {
-    box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
-  }
-</style></head><body class="font-body-md selection:bg-primary/30"><div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+</style><style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head><body class="font-body-md selection:bg-primary/30"><div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
   <div class="absolute top-[10%] left-[5%] w-96 h-96 bg-primary/10 blur-[120px] rounded-full animate-[float-bubble_15s_infinite_alternate]"></div>
   <div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-secondary-container/5 blur-[150px] rounded-full animate-[float-bubble_20s_infinite_alternate-reverse]"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03]">
@@ -303,22 +263,22 @@
         }
 </style>
 <!-- TopNavBar -->
-<header class="fixed top-0 left-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/20">
-<div class="max-w-7xl mx-auto flex items-center px-margin-mobile md:px-margin-desktop h-20 grid" style="grid-template-columns: 1fr auto 1fr;"><div class="text-headline-sm font-display-lg-mobile font-extrabold tracking-tighter text-on-surface">TG Copilot</div>
-<nav class="hidden md:flex items-center gap-12 justify-center">
-<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors" href="#">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors" href="#">Marketplace</a>
-<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors" href="#">Channels</a>
-<a class="text-on-surface-variant font-medium hover:text-on-surface transition-colors" href="#">Automation</a>
-<a class="text-on-surface font-bold border-b-2 border-primary transition-colors" href="#">Engine</a>
-</nav>
-<div class="flex items-center gap-6 hidden md:flex justify-end">
-<button class="text-on-surface-variant font-medium hover:text-on-surface transition-all duration-300 hover:scale-105 active:scale-95">Login</button>
-<button class="px-8 py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(0,123,255,0.4)] transition-all duration-300 hover:scale-105 active:scale-95" style="background-color: #007bff; color: white;">Get Started</button>
-</div>
-<button class="md:hidden flex items-center p-2 text-on-surface hover:bg-white/5 rounded-lg transition-colors" id="mobile-menu-open">
-<span class="material-symbols-outlined">menu</span>
-</button></div>
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-background/60 backdrop-blur-xl border-b border-outline-variant/20">
+  <div class="text-xl font-bold tracking-tighter text-white">TG Copilot</div>
+  <nav class="hidden md:flex items-center gap-10">
+    <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Home</a>
+    <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Marketplace</a>
+    <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Channels</a>
+    <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Automation</a>
+    <a class="text-white font-medium hover:text-primary transition-colors" href="#">Engine</a>
+  </nav>
+  <div class="flex items-center gap-6 hidden md:flex">
+    <button class="text-on-surface-variant font-medium hover:text-white transition-colors">Login</button>
+    <button class="bg-[#007bff] text-white px-6 py-2 rounded-lg font-bold hover:shadow-[0_0_20px_rgba(0,123,255,0.4)] transition-all">Get Started</button>
+  </div>
+  <button class="md:hidden flex items-center p-2 text-on-surface hover:bg-white/5 rounded-lg transition-colors" id="mobile-menu-open">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
 </header>
 <main class="pt-32 pb-20 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
 <!-- Hero Section -->
