@@ -1,118 +1,270 @@
-<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<!DOCTYPE html><html class="dark" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head><style data-stitch-cursor="">
+  @keyframes float-bubble {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, 100px) scale(1.1); }
+    100% { transform: translate(-30px, 50px) scale(0.9); }
+  }
+  @keyframes data-flow {
+    from { transform: translateY(0); }
+    to { transform: translateY(100px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  .glass-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  }
+  .glass-card:hover {
+    box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
+  }
+</style><style data-stitch-scroll-lock="">
+  @keyframes float-bubble {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, 100px) scale(1.1); }
+    100% { transform: translate(-30px, 50px) scale(0.9); }
+  }
+  @keyframes data-flow {
+    from { transform: translateY(0); }
+    to { transform: translateY(100px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  .glass-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  }
+  .glass-card:hover {
+    box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
+  }
+</style><style class="">
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+    border-color: rgba(0, 123, 255, 0.5) !important;
+  }
+  .card-group:hover .icon-highlight {
+    color: #007bff !important;
+  }
+
+  @keyframes float-bubble {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, 100px) scale(1.1); }
+    100% { transform: translate(-30px, 50px) scale(0.9); }
+  }
+  @keyframes data-flow {
+    from { transform: translateY(0); }
+    to { transform: translateY(100px); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  .glass-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  }
+  .glass-card:hover {
+    box-shadow: 0 0 40px -10px rgba(0, 123, 255, 0.3) !important;
+  }
+</style><style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head><body class="font-body-md selection:bg-primary/30"><div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+  <div class="absolute top-[10%] left-[5%] w-96 h-96 bg-primary/10 blur-[120px] rounded-full animate-[float-bubble_15s_infinite_alternate]"></div>
+  <div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-secondary-container/5 blur-[150px] rounded-full animate-[float-bubble_20s_infinite_alternate-reverse]"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-[0.03]">
+    <svg width="100%" height="100%" class="animate-[data-flow_60s_linear_infinite]">
+      <pattern id="flow-lines" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+        <path d="M 0 50 L 100 50" fill="none" stroke="#007bff" stroke-width="0.5"></path>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#flow-lines)"></rect>
+    </svg>
+  </div>
+</div>```html
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>TG Copilot | The Intelligent Architect of Telegram Ads</title>
+<title>TG Copilot | Ad Creation Engine</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<style>
-        body {
-            background-color: #0b0e16;
-            color: #e0e2ed;
-            overflow-x: hidden;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#10131b",
+                "surface-dim": "#10131b",
+                "tertiary-fixed": "#ffdbcc",
+                "surface-container": "#1c2027",
+                "on-primary-fixed": "#001a41",
+                "inverse-primary": "#005bc0",
+                "surface-variant": "#31353d",
+                "surface": "#10131b",
+                "secondary-fixed-dim": "#00dbe9",
+                "inverse-surface": "#e0e2ed",
+                "secondary-container": "#00eefc",
+                "outline-variant": "#414754",
+                "on-secondary-fixed": "#002022",
+                "surface-container-highest": "#31353d",
+                "on-secondary-container": "#00686f",
+                "outline": "#8b90a0",
+                "surface-container-lowest": "#0b0e16",
+                "surface-tint": "#adc7ff",
+                "secondary": "#d3fbff",
+                "on-tertiary": "#571e00",
+                "tertiary": "#ffb695",
+                "surface-container-high": "#272a32",
+                "primary": "#adc7ff",
+                "on-tertiary-container": "#4c1a00",
+                "on-primary-fixed-variant": "#004493",
+                "secondary-fixed": "#7df4ff",
+                "on-error-container": "#ffdad6",
+                "tertiary-container": "#ef6719",
+                "on-background": "#e0e2ed",
+                "tertiary-fixed-dim": "#ffb695",
+                "on-secondary-fixed-variant": "#004f54",
+                "error": "#ffb4ab",
+                "error-container": "#93000a",
+                "inverse-on-surface": "#2d3039",
+                "surface-container-low": "#181c23",
+                "on-surface": "#e0e2ed",
+                "primary-fixed": "#d8e2ff",
+                "primary-container": "#4a8eff",
+                "on-tertiary-fixed": "#351000",
+                "primary-fixed-dim": "#adc7ff",
+                "on-tertiary-fixed-variant": "#7c2e00",
+                "on-primary-container": "#00285b",
+                "on-primary": "#002e68",
+                "surface-bright": "#363942",
+                "on-surface-variant": "#c1c6d7",
+                "on-error": "#690005",
+                "on-secondary": "#00363a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "8px",
+                "container-max": "1280px",
+                "margin-mobile": "20px",
+                "margin-desktop": "64px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "headline-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Hanken Grotesk"
+                ],
+                "label-mono": [
+                        "JetBrains Mono"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-md": [
+                        "Hanken Grotesk"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "72px",
+                        {
+                                "lineHeight": "80px",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-mono": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-md": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
         }
+},
+    },
+  }
+</script>
+<style>
+        body { background-color: #10131b; color: #e0e2ed; }
         .glass-card {
-            background: rgba(16, 19, 27, 0.6);
-            backdrop-filter: blur(20px);
+            background: linear-gradient(135deg, rgba(28, 32, 39, 0.8) 0%, rgba(11, 14, 22, 0.9) 100%);
+            backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover {
             border-color: rgba(173, 199, 255, 0.2);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 123, 255, 0.2);
         }
-        .bg-mesh {
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 222, 233, 0.02) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(74, 142, 255, 0.02) 0px, transparent 50%);
-        }
-    </style>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "background": "#10131b",
-                        "surface-dim": "#10131b",
-                        "tertiary-fixed": "#ffdbcc",
-                        "surface-container": "#1c2027",
-                        "on-primary-fixed": "#001a41",
-                        "inverse-primary": "#005bc0",
-                        "surface-variant": "#31353d",
-                        "surface": "#10131b",
-                        "secondary-fixed-dim": "#00dbe9",
-                        "inverse-surface": "#e0e2ed",
-                        "secondary-container": "#00eefc",
-                        "outline-variant": "#414754",
-                        "on-secondary-fixed": "#002022",
-                        "surface-container-highest": "#31353d",
-                        "on-secondary-container": "#00686f",
-                        "outline": "#8b90a0",
-                        "surface-container-lowest": "#0b0e16",
-                        "surface-tint": "#adc7ff",
-                        "secondary": "#d3fbff",
-                        "on-tertiary": "#571e00",
-                        "tertiary": "#ffb695",
-                        "surface-container-high": "#272a32",
-                        "primary": "#adc7ff",
-                        "on-tertiary-container": "#4c1a00",
-                        "on-primary-fixed-variant": "#004493",
-                        "secondary-fixed": "#7df4ff",
-                        "on-error-container": "#ffdad6",
-                        "tertiary-container": "#ef6719",
-                        "on-background": "#e0e2ed",
-                        "tertiary-fixed-dim": "#ffb695",
-                        "on-secondary-fixed-variant": "#004f54",
-                        "error": "#ffb4ab",
-                        "error-container": "#93000a",
-                        "inverse-on-surface": "#2d3039",
-                        "surface-container-low": "#181c23",
-                        "on-surface": "#e0e2ed",
-                        "primary-fixed": "#d8e2ff",
-                        "primary-container": "#4a8eff",
-                        "on-tertiary-fixed": "#351000",
-                        "primary-fixed-dim": "#adc7ff",
-                        "on-tertiary-fixed-variant": "#7c2e00",
-                        "on-primary-container": "#00285b",
-                        "on-primary": "#002e68",
-                        "surface-bright": "#363942",
-                        "on-surface-variant": "#c1c6d7",
-                        "on-error": "#690005",
-                        "on-secondary": "#00363a"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "unit": "8px",
-                        "container-max": "1280px",
-                        "margin-mobile": "20px",
-                        "margin-desktop": "64px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["Plus Jakarta Sans"],
-                        "headline-sm": ["Plus Jakarta Sans"],
-                        "display-lg-mobile": ["Plus Jakarta Sans"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "label-mono": ["JetBrains Mono"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "body-md": ["Hanken Grotesk"]
-                    }
-                },
-            },
-        }
-    </script>
-<style data-stitch-cursor=""></style><style data-stitch-scroll-lock=""></style></head>
-<body class="bg-background text-on-surface bg-mesh font-['Plus_Jakarta_Sans']">
+</style>
+
 <!-- TopAppBar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-background/60 backdrop-blur-xl border-b border-white/10"><div class="text-xl font-bold tracking-tighter text-on-surface flex-shrink-0">TG Copilot</div><div class="hidden md:flex items-center gap-10"><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Home</a><a class="text-white font-medium hover:text-primary transition-colors" href="#">Marketplace</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Channels</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Automation</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Engine</a></div><div class="flex items-center gap-6 hidden md:flex"><button class="text-on-surface-variant font-medium hover:text-white transition-colors">Login</button><button class="bg-[#007bff] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#0069d9] transition-all">Get Started</button></div><button class="md:hidden text-on-surface p-2" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">menu</span></button></nav>
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-background/60 backdrop-blur-xl border-b border-white/10"><div class="text-xl font-bold tracking-tighter text-on-surface flex-shrink-0">TG Copilot</div><div class="hidden md:flex items-center gap-10"><a class="text-white font-medium hover:text-primary transition-colors" href="#">Home</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Marketplace</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Channels</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Automation</a><a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Engine</a></div><div class="flex items-center gap-6 hidden md:flex"><button class="text-on-surface-variant font-medium hover:text-white transition-colors">Login</button><button class="bg-[#007bff] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#0069d9] transition-all">Get Started</button></div><button class="md:hidden text-on-surface p-2" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">menu</span></button></nav>
 <!-- Mobile Menu Overlay -->
 <div class="fixed inset-0 bg-surface z-[60] flex flex-col p-margin-mobile invisible opacity-0 lg:hidden transition-all duration-300" id="mobile-menu-overlay">
 <div class="flex justify-between items-center mb-12">
@@ -122,12 +274,11 @@
 </button>
 </div>
 <div class="flex flex-col gap-8 mb-12">
-<a class="text-2xl text-primary font-bold" href="#">Home</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
 <a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
-
 <a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Channels</a>
 <a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Automation</a>
-<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="#">Engine</a>
+<a class="text-2xl text-primary font-bold" href="#">Engine</a>
 </div>
 <div class="flex flex-col gap-4 mt-auto">
 <button class="w-full py-4 rounded-xl border border-outline-variant text-on-surface font-medium">Login</button>
@@ -142,223 +293,349 @@
         }
     </script>
 <main class="pt-32 pb-20 overflow-x-hidden">
-</header>
 <!-- Hero Section -->
-<section class="relative pt-44 pb-24 px-margin-mobile mx-auto flex flex-col items-center text-center max-w-7xl">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-container/20 bg-secondary-container/5 text-secondary-container font-medium text-[12px] mb-10">
-<span class="material-symbols-outlined text-[14px]" data-weight="fill">bolt</span>
-        NEXT-GEN TELEGRAM ADS ARCHITECT
-    </div>
-<h1 class="text-display-lg-mobile md:text-[84px] font-extrabold text-white mb-8 max-w-5xl leading-[1.1] tracking-tighter">
-        Automate Your Ads.<br>
-<span class="text-primary-container">Scale Faster with AI.</span>
-</h1>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mb-12">
-        TG Copilot helps you create, launch and manage high performing Telegram ads using powerful AI tools and smart automation and no experience required.
-    </p>
-<div class="flex flex-col sm:flex-row gap-5 mb-20">
-<button class="bg-primary-container px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary-container/20 text-white">Get Started</button>
-<button class="bg-surface-container-high text-on-surface border border-outline-variant/30 px-10 py-4 rounded-xl font-bold hover:bg-surface-container-highest transition-colors">Try Free Demo</button>
+<section class="grid lg:grid-cols-2 gap-16 items-center mb-40">
+<div class="space-y-8 animate-fade-in-up">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container/10 border border-secondary-container/20 text-secondary-container font-label-mono text-label-mono uppercase tracking-widest">Ad Creation Engine</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                    Create, Manage &amp; Launch <span class="text-primary">Telegram Ads</span> at Scale
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Turn hours of repetitive ad creation into a fast and structured workflow. Deploy hundreds of high-performing variations in minutes, not days.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary-container" data-icon="bolt">bolt</span>
+                        Start faster with automated campaign structures
+                    </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary-container" data-icon="rocket_launch">rocket_launch</span>
+                        Launch more campaigns without increasing overhead
+                    </li>
+<li class="flex items-center gap-3 font-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary-container" data-icon="grid_view">grid_view</span>
+                        Scale without chaos through centralized control
+                    </li>
+</ul>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(173,199,255,0.4)] transition-all duration-200 duration-300 hover:scale-105 active:scale-95" style="background-color: rgb(0, 123, 255); color: white;">Try TG Copilot Now</button>
+<button class="glass-card px-8 py-4 rounded-xl font-bold text-lg text-on-surface hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group duration-300 hover:scale-105 active:scale-95" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">Watch Demo</button>
 </div>
-<!-- Dashboard Preview -->
-<div class="w-full max-w-5xl glass-card rounded-[32px] p-4 border border-white/5 relative bg-black/40">
-<div class="bg-background rounded-[24px] overflow-hidden aspect-[16/9] border border-white/5">
-<img alt="TG Copilot Dashboard" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiFG_T7ZGV1-SANNuq5xzMkexENztl9phRv-iH-yBzNWGK0WY4SraETRo4KP3FKfdnu7lorgzPQ-nC2Ug012RCUl_F5i-VO-szf_EMxrESCewxyP96Bo4Qjo6NMODZ7DYp19MdLMklv0-NXq9eqTkkgqxt1WlXyGik8ErcWzOcMjYvfiSWty2uLSib47yqRxKYdl_dxWhuFqk8BY80KwWHH6fcgZGHtBE2aHGzX6qEmg7Tl0cDTDdeFota7hsyuKMqJPUHJWTyhM4">
 </div>
-<div class="absolute top-1/4 -right-12 glass-card p-6 rounded-2xl hidden lg:block border-white/10 shadow-2xl">
-<div class="flex items-center gap-4 mb-2">
-<span class="material-symbols-outlined text-secondary-container">trending_up</span>
-<span class="text-[12px] font-bold text-white/70">ROI BOOST</span>
-</div>
-<div class="text-3xl font-bold text-primary">+284%</div>
-</div>
-</div>
-</section>
-<!-- Problem + Solution -->
-<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-32">
-<section class="py-24 px-8 md:px-20 bg-surface-container-low rounded-[48px] border border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-<div class="space-y-8">
-<div class="inline-block px-4 py-1 rounded-full bg-error-container/5 border border-error-container/20 text-error font-bold text-[12px]">THE PROBLEM</div>
-<h2 class="text-headline-md font-bold text-white leading-tight">Creating ads manually takes time, effort and constant testing.</h2>
-<p class="text-body-lg text-on-surface-variant">Managing multiple Telegram channels and campaigns can quickly become overwhelming.</p>
-</div>
-<div class="glass-card p-10 rounded-[40px] border-secondary-container/20 relative">
-<div class="absolute -top-6 -left-6 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container shadow-lg shadow-secondary-container/20">
-<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
-</div>
-<div class="inline-block px-4 py-1 rounded-full bg-secondary-container/5 border border-secondary-container/10 text-secondary-container font-bold text-[12px] mb-6">THE SOLUTION</div>
-<h3 class="text-2xl font-bold text-white mb-4">TG Copilot simplifies everything.</h3>
-<p class="text-body-md text-on-surface-variant leading-relaxed">With AI powered automation, you can generate ads in seconds, manage campaigns easily and scale your marketing without extra effort.</p>
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="glass-card p-4 rounded-2xl overflow-hidden relative border-primary/20 hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<img alt="Dashboard Mockup" class="rounded-xl w-full animate-fade-in-up" data-alt="A sophisticated dark-themed dashboard mockup for a Telegram advertising platform. The interface displays complex data visualizations, campaign performance charts, and a bulk ad creation workspace. The lighting is low-key with vibrant electric blue and cyan accents highlighting key metrics. The style is futuristic, professional, and high-fidelity, conveying a sense of absolute control and advanced technological capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUryssvSaM4D2_2LjpXmxCDPTGkyRrYyfoRn3_zZ-IVhHDWCwhqcFymGbsq6Wv99O1zxD3e9OtKU776nEkCaHE1PcM5IMzpNPd4IekkJMsFmTFbp7XSalWSOdegc11Df15NTNk3pKGXeXXuVX7lkMnK3hxeT16HoMreOro1hVOS5ZAtlu-A7vD1F48b6YcRp6b6_gRwzsEsoftuzV84zO71NKIjd9yKqdRU3JtXI3sK80FuUFwdyKbNTpFIquvIqiqA02vIM41Q8E">
 </div>
 </div>
 </section>
-</div>
-<!-- Features Section -->
-<section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
-<div class="text-center mb-20">
-<h2 class="text-4xl font-extrabold text-white mb-4">Engineered for Dominance</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto">Our powerful suite of AI tools designed to provide absolute control over the Telegram advertising landscape.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Feature cards matching SCREEN_9 styling -->
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">auto_fix_high</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">Ad Creation Engine</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Instantly generate multiple ad creatives with AI based on your goals.</p>
-</div>
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">storefront</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">Ad Marketplace</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Buy, manage and deploy ads from one place with optimized pricing.</p>
-</div>
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">verified</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">Verified Network</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Curated list of approved channels with high engagement and real users.</p>
-</div>
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">psychology</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">Strategic Consultation</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Expert-level insights and data analysis to improve your ad performance.</p>
-</div>
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">rocket</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">All-in-One Growth Suite</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Everything you need from creation to scaling your campaigns effortlessly.</p>
-</div>
-<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
-<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
-<span class="material-symbols-outlined text-white/70">extension</span>
-</div>
-<h3 class="text-xl font-bold text-white mb-3">Chrome Extension</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Work directly from the browser with our powerful automation extension.</p>
-</div>
-</div>
-</section>
-<!-- How It Works Section -->
-<section class="py-32 relative bg-surface-container-lowest/50 border-y border-white/5 w-full">
-<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
-<div class="text-center mb-24">
-<h2 class="text-4xl font-extrabold text-white mb-4">How It Works</h2>
-<p class="text-on-surface-variant">Launch high-performing campaigns in four precision steps.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div class="flex flex-col items-center text-center px-6">
-<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">1</div>
-<h4 class="text-lg font-bold text-white mb-3">Define Idea</h4>
-<p class="text-on-surface-variant text-sm">Enter your product or ad idea to the platform.</p>
-</div>
-<div class="flex flex-col items-center text-center px-6">
-<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">2</div>
-<h4 class="text-lg font-bold text-white mb-3">Generate</h4>
-<p class="text-on-surface-variant text-sm">Generate ad variations using our advanced AI.</p>
-</div>
-<div class="flex flex-col items-center text-center px-6">
-<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">3</div>
-<h4 class="text-lg font-bold text-white mb-3">Launch</h4>
-<p class="text-on-surface-variant text-sm">Choose Telegram channels and launch your ads.</p>
-</div>
-<div class="flex flex-col items-center text-center px-6">
-<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">4</div>
-<h4 class="text-lg font-bold text-white mb-3">Optimize</h4>
-<p class="text-on-surface-variant text-sm">Track performance and optimize for maximum ROI.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Discovery Engine -->
-<section class="py-32 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
-<div class="bg-surface-container-low rounded-[48px] border border-outline-variant/20 p-8 md:p-20 flex flex-col md:row items-center gap-20">
-<div class="flex-1">
-<div class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-white font-bold text-[12px] mb-8">PREMIUM FEATURE</div>
-<h2 class="text-[40px] font-extrabold text-white mb-8 leading-tight tracking-tighter">Channel Discovery Engine</h2>
-<p class="text-body-lg text-on-surface-variant mb-12">
-                Find high performing Telegram channels based on niche, engagement rate and audience quality. Uncover hidden opportunities before your competitors do.
+<!-- Core Message -->
+<section class="text-center max-w-3xl mx-auto mb-40">
+<p class="font-label-mono text-label-mono text-primary uppercase mb-6 tracking-[0.2em]">The Performance Gap</p>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 leading-tight">Execution friction is the hidden killer of scaling.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Most teams fail to scale not because of poor strategy, but because the manual work of duplicating, testing, and managing hundreds of Telegram ads is physically impossible to sustain. TG Copilot removes the friction, allowing you to focus on strategy while we handle the engine.
             </p>
-<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-4">
-                Unlock Access <span class="material-symbols-outlined text-[18px]">lock</span>
-</button>
+</section>
+<!-- Main Value Prop & Features Grid -->
+<section class="mb-40 animate-fade-in-up">
+<div class="mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Bulk Ad Creation That <span class="text-secondary-container">Actually Feels Organized.</span></h2>
 </div>
-<div class="flex-1 w-full max-w-md">
-<div class="glass-card aspect-square rounded-[40px] border-white/5 flex flex-col justify-center items-center text-center p-12 bg-black/40">
-<div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-8 border border-white/10 shadow-inner">
-<span class="material-symbols-outlined text-[40px] text-white/40">lock</span>
+<div class="grid md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 glass-card p-8 rounded-3xl group hover:border-[#007bff]/40 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.03] duration-500 ease-out hover-glow card-group hover:scale-[1.02] transition-transform" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="w-12 h-12 bg-primary/15 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/25 transition-colors group-hover:bg-[#007bff] transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-all duration-300 transition-colors icon-highlight" data-icon="layers">layers</span>
 </div>
-<h4 class="text-xl font-bold text-white mb-4">Premium Content</h4>
-<p class="text-on-surface-variant/70 text-sm">Full analysis and channel metrics are locked. Upgrade to access the complete engine.</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Bulk Ad Creation Engine</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Import your assets once and watch our engine generate dozens of campaign structures instantly. No more manual copy-pasting for every single ad variation.</p>
+<img alt="Creation Engine" class="rounded-xl w-full h-48 object-cover opacity-60 group-hover:opacity-100 transition-opacity" data-alt="A close-up visual of a high-tech microprocessor glowing with electric blue data paths. The image represents the power and speed of the bulk ad creation engine. The lighting is dramatic and dark, with neon cyan highlights illuminating the intricate circuits. The overall aesthetic is ultra-modern and technical, emphasizing precision and large-scale performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALF_SlaXLFVmhzIYSEBbOnLEPdQG26UKEYll522JHR-fpzEM4DgKN6wDdZpw9gmpxr-aE_Yam6gc0HkFbpRUdfUrsOzM2Y2auGUXV33hIeVbZFuo2kZyQIsMSKW-pkDaCLi9S2Pm45P6Rmy-ZZd37XwTLReFSSEwMfoFMbKaWPV_eiiWkXNcrJyY_Xx7nSmHQoaV15XbRYEOtQAD4nmYeHCmjjn3v_VzT_t3XcybsucDlsz5Iwh4O2LQEG13ozRdMUBctMOdT650M">
+</div>
+<div class="md:col-span-4 glass-card p-8 rounded-3xl group hover:border-[#007bff]/40 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.03] duration-500 ease-out hover-glow card-group hover:scale-[1.02] transition-transform" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="w-12 h-12 bg-secondary-container/15 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#007bff] transition-all duration-300">
+<span class="material-symbols-outlined text-secondary-container group-hover:text-white transition-all duration-300 transition-colors icon-highlight" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Smart Variation Generator</h3>
+<p class="font-body-md text-on-surface-variant">Automatically spin headlines and messaging angles using logic-based variables to find the perfect hook for every audience segment.</p>
+</div>
+<div class="md:col-span-4 glass-card p-8 rounded-3xl group hover:border-[#007bff]/40 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.03] duration-500 ease-out hover-glow card-group hover:scale-[1.02] transition-transform" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="w-12 h-12 bg-outline/15 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#007bff] transition-all duration-300">
+<span class="material-symbols-outlined text-outline group-hover:text-white transition-all duration-300 transition-colors icon-highlight" data-icon="dashboard_customize">dashboard_customize</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Centralized Dashboard</h3>
+<p class="font-body-md text-on-surface-variant">Control every campaign from a single pane of glass. Adjust budgets, toggle ads, and monitor performance across all channels without switching tabs.</p>
+</div>
+<div class="md:col-span-4 glass-card p-8 rounded-3xl group hover:border-[#007bff]/40 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.03] duration-500 ease-out hover-glow card-group hover:scale-[1.02] transition-transform" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="w-12 h-12 bg-tertiary-container/15 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#007bff] transition-all duration-300">
+<span class="material-symbols-outlined text-tertiary-container group-hover:text-white transition-all duration-300 transition-colors icon-highlight" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Structured Workflow</h3>
+<p class="font-body-md text-on-surface-variant">Follow a proven, systematic approach to ad creation that eliminates errors and ensures every campaign is set up for maximum ROI.</p>
+</div>
+<div class="md:col-span-4 glass-card p-8 rounded-3xl border-secondary-container/30 group hover:border-[#007bff]/40 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.03] duration-500 ease-out hover-glow card-group hover:scale-[1.02] transition-transform" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#007bff] transition-all duration-300">
+<span class="material-symbols-outlined text-secondary-container group-hover:text-white transition-all duration-300 transition-colors icon-highlight" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Built for Scale</h3>
+<p class="font-body-md text-on-surface-variant">Designed specifically for power users launching 500+ ads. Our infrastructure handles the load so your browser never crashes.</p>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="mb-40 relative animate-fade-in-up">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">The 5-Step Launch Protocol</h2>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-5 gap-8">
+<div class="hidden md:block absolute top-12 left-0 w-full h-[2px] bg-outline-variant/20 -z-10 animate-fade-in-up"></div>
+<div class="flex flex-col items-center text-center animate-fade-in-up">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold mb-6 relative z-10 shadow-[0_0_15px_rgba(173,199,255,0.5)]">1</div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-2">Define</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Input product, link, and targeting.</p>
+</div>
+<div class="flex flex-col items-center text-center animate-fade-in-up">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary/40 text-primary flex items-center justify-center font-bold mb-6 relative z-10">2</div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-2">Generate</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Create variations of headlines.</p>
+</div>
+<div class="flex flex-col items-center text-center animate-fade-in-up">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary/40 text-primary flex items-center justify-center font-bold mb-6 relative z-10">3</div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-2">Customize</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Review and edit ad sets.</p>
+</div>
+<div class="flex flex-col items-center text-center animate-fade-in-up">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-primary/40 text-primary flex items-center justify-center font-bold mb-6 relative z-10">4</div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-2">Launch</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Deploy in bulk to Telegram.</p>
+</div>
+<div class="flex flex-col items-center text-center animate-fade-in-up">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold mb-6 relative z-10 shadow-[0_0_15px_rgba(0,238,252,0.4)]">5</div>
+<h4 class="font-headline-sm text-[18px] text-on-surface mb-2">Monitor</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Identify and scale winners.</p>
+</div>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="mb-40">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-12">Proven Results at Scale</h2>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="glass-card p-8 rounded-3xl flex flex-col h-full hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="mb-6 flex justify-between items-start">
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-mono text-[10px] rounded border border-primary/20">AFFILIATE MARKETER</span>
+<span class="material-symbols-outlined text-secondary-container transition-colors duration-300 icon-highlight" data-icon="star" data-weight="fill">star</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">"Reduced setup time by 70%"</h4>
+<p class="font-body-md text-on-surface-variant mb-8 flex-grow">"I used to spend my entire Monday just duplicating ads. Now it takes 20 minutes, and I spend the rest of the week optimizing."</p>
+<div class="pt-6 border-t border-outline-variant/30 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Alex R.</p>
+<p class="text-xs text-on-surface-variant">Solo Media Buyer</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl flex flex-col h-full border-primary/30 hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="mb-6 flex justify-between items-start">
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-mono text-[10px] rounded border border-primary/20">MARKETING AGENCY</span>
+<span class="material-symbols-outlined text-secondary-container transition-colors duration-300 icon-highlight" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">"Manage 4x more clients"</h4>
+<p class="font-body-md text-on-surface-variant mb-8 flex-grow">"TG Copilot changed our agency's profitability. One buyer can now manage the workload of four people without burnout."</p>
+<div class="pt-6 border-t border-outline-variant/30 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Sarah J.</p>
+<p class="text-xs text-on-surface-variant">Head of Operations</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl flex flex-col h-full hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="mb-6 flex justify-between items-start">
+<span class="px-3 py-1 bg-primary/10 text-primary font-label-mono text-[10px] rounded border border-primary/20">CRYPTO CAMPAIGN</span>
+<span class="material-symbols-outlined text-secondary-container transition-colors duration-300 icon-highlight" data-icon="diamond" data-weight="fill">diamond</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-2">"ROI increased by 140%"</h4>
+<p class="font-body-md text-on-surface-variant mb-8 flex-grow">"Rapid testing of 200+ variations allowed us to find the winning messaging in 48 hours instead of 2 weeks."</p>
+<div class="pt-6 border-t border-outline-variant/30 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="text-sm font-bold text-on-surface">Dmitry V.</p>
+<p class="text-xs text-on-surface-variant">Growth Lead</p>
+</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Benefits -->
-<section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl border-t border-white/5">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-primary-container text-[32px] mb-6">schedule</span>
-<h5 class="text-xl font-bold text-white mb-4">Save Hours</h5>
-<p class="text-on-surface-variant text-sm leading-relaxed">Automate repetitive tasks and save hours of manual ad management every day.</p>
+<!-- Comparison Section -->
+<section class="mb-40 overflow-hidden animate-fade-in-up">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Stop Doing This. Start Doing That.</h2>
 </div>
-<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-secondary-container text-[32px] mb-6">trending_up</span>
-<h5 class="text-xl font-bold text-white mb-4">Scale Instantly</h5>
-<p class="text-on-surface-variant text-sm leading-relaxed">Deploy your ads across hundreds of channels with a single click and scale your reach.</p>
+<div class="grid md:grid-cols-2 gap-px bg-outline-variant/20 rounded-3xl border border-outline-variant/20 animate-fade-in-up">
+<div class="bg-surface p-12 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.02] transition-transform duration-500">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<h5 class="text-headline-sm text-error">Manual Ads</h5>
 </div>
-<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-tertiary text-[32px] mb-6">monitoring</span>
-<h5 class="text-xl font-bold text-white mb-4">AI Optimization</h5>
-<p class="text-on-surface-variant text-sm leading-relaxed">Improve your ad performance continuously with real-time AI insights and tweaks.</p>
+<ul class="space-y-6">
+<li class="flex gap-4 text-on-surface-variant">
+<span class="text-error font-bold">✕</span>
+                            Manual duplication for every channel and variation.
+                        </li>
+<li class="flex gap-4 text-on-surface-variant">
+<span class="text-error font-bold">✕</span>
+                            Budget management spread across 50 browser tabs.
+                        </li>
+<li class="flex gap-4 text-on-surface-variant">
+<span class="text-error font-bold">✕</span>
+                            High risk of targeting errors and link typos.
+                        </li>
+<li class="flex gap-4 text-on-surface-variant">
+<span class="text-error font-bold">✕</span>
+                            Scaling requires hiring more staff.
+                        </li>
+</ul>
 </div>
-<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
-<span class="material-symbols-outlined text-on-surface-variant text-[32px] mb-6">speed</span>
-<h5 class="text-xl font-bold text-white mb-4">No Tech Needed</h5>
-<p class="text-on-surface-variant text-sm leading-relaxed">No technical or marketing experience needed. Our AI handles the complexity for you.</p>
+<div class="bg-surface-container-low p-12 hover:shadow-[0_0_20px_rgba(0,123,255,0.1)] transition-all duration-300 hover:scale-[1.02] transition-transform duration-500">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle">check_circle</span>
+<h5 class="text-headline-sm text-secondary-container">TG Copilot</h5>
+</div>
+<ul class="space-y-6">
+<li class="flex gap-4 text-on-surface">
+<span class="text-secondary-container font-bold">✓</span>
+                            One-click bulk creation and variation engine.
+                        </li>
+<li class="flex gap-4 text-on-surface">
+<span class="text-secondary-container font-bold">✓</span>
+                            Unified control panel for global adjustments.
+                        </li>
+<li class="flex gap-4 text-on-surface">
+<span class="text-secondary-container font-bold">✓</span>
+                            Automated validation and error prevention layers.
+                        </li>
+<li class="flex gap-4 text-on-surface">
+<span class="text-secondary-container font-bold">✓</span>
+                            Scaling is just a click, no new hires needed.
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mb-40 max-w-4xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-12 text-center">Questions? We Have Answers.</h2>
+<div class="space-y-4">
+<div class="glass-card p-6 rounded-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="flex justify-between items-center cursor-pointer">
+<h6 class="font-headline-sm text-[18px] text-on-surface">Is there a limit to how many ads I can create?</h6>
+<span class="material-symbols-outlined text-outline transition-colors duration-300 icon-highlight" data-icon="expand_more">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-body-md border-t border-outline-variant/20 pt-4">
+                        No hard limits. Our engine is built to handle thousands of variations. Your subscription tier determines the active campaign capacity, but creation is infinite.
+                    </div>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="flex justify-between items-center cursor-pointer">
+<h6 class="font-headline-sm text-[18px] text-on-surface">Do I need technical skills to use the automation?</h6>
+<span class="material-symbols-outlined text-outline transition-colors duration-300 icon-highlight" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl hover:scale-[1.03] transition-all duration-500 ease-out hover-glow card-group" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="flex justify-between items-center cursor-pointer">
+<h6 class="font-headline-sm text-[18px] text-on-surface">How does the variation generator work?</h6>
+<span class="material-symbols-outlined text-outline transition-colors duration-300 icon-highlight" data-icon="expand_more">expand_more</span>
+</div>
 </div>
 </div>
 </section>
 <!-- Final CTA -->
-<section class="py-40 px-margin-mobile text-center bg-surface-container-lowest/30 w-full">
-<div class="max-w-7xl mx-auto md:px-margin-desktop">
-<h2 class="text-5xl font-extrabold text-white mb-8 tracking-tighter">Start Creating Smarter Ads Today</h2>
-<p class="text-body-lg text-on-surface-variant mb-14 max-w-2xl mx-auto">Join users who are already scaling their ads with TG Copilot and dominating the Telegram market.</p>
-<button class="bg-primary-container text-on-primary-container px-14 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary-container/20">Get Started Now</button>
+<section class="relative rounded-[3rem] overflow-hidden py-24 px-8 text-center border border-primary/20 bg-surface-container-low mb-40 animate-fade-in-up">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary-container/10 blur-[120px] rounded-full"></div>
+<div class="relative z-10 space-y-8 max-w-3xl mx-auto">
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">Stop Creating Ads Manually. <span class="text-primary">Start Scaling Smartly.</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Join 500+ top-tier media buyers who have already automated their Telegram workflow.</p>
+<div class="flex justify-center gap-4">
+<button class="px-10 py-5 rounded-xl font-bold text-xl hover:shadow-[0_0_30px_rgba(173,199,255,0.4)] transition-all duration-200 duration-300 hover:scale-105 active:scale-95" style="background-color: #007bff; color: white;">Start Using TG Copilot Today</button>
+</div>
+<p class="font-label-mono text-[12px] text-on-surface-variant uppercase tracking-widest">No Credit Card Required • 14-Day Free Trial</p>
 </div>
 </section>
-<!-- Footer - Matches SCREEN_9 Style -->
-<footer class="w-full py-24 bg-background border-t border-white/5">
-<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-16">
-<div class="flex flex-col gap-4 items-center md:items-start">
-<span class="text-2xl font-bold text-white tracking-tighter">TG Copilot</span>
-<p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left opacity-60">
-                © 2024 TG Copilot. The Intelligent Architect of Telegram Ads.
-            </p>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background/60 backdrop-blur-xl border-t border-outline-variant/20 pt-20 pb-12">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+<div class="space-y-4">
+<div class="text-headline-sm font-display-lg-mobile font-bold text-on-surface">TG Copilot</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">The Intelligent Architect of Telegram Ads. Scale your reach without increasing your workload.</p>
 </div>
-<div class="flex flex-wrap justify-center gap-10">
-<a class="text-on-surface-variant hover:text-white transition-colors text-sm font-medium" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-white transition-colors text-sm font-medium" href="#">Terms of Service</a>
-<a class="text-on-surface-variant hover:text-white transition-colors text-sm font-medium" href="#">API Docs</a>
-<a class="text-on-surface-variant hover:text-white transition-colors text-sm font-medium" href="#">Support</a>
+<div class="flex flex-wrap gap-x-16 gap-y-8">
+<div class="space-y-4">
+<h5 class="text-label-mono font-bold text-on-surface uppercase tracking-widest">Platform</h5>
+<ul class="space-y-2">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Automation</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Engine</a></li>
+</ul>
 </div>
-<div class="flex gap-6">
-<div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-white/30 hover:text-white transition-all cursor-pointer">
-<span class="material-symbols-outlined text-[18px]">public</span>
+<div class="space-y-4">
+<h5 class="text-label-mono font-bold text-on-surface uppercase tracking-widest">Support</h5>
+<ul class="space-y-2">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">API Docs</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
 </div>
-<div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant hover:border-white/30 hover:text-white transition-all cursor-pointer">
-<span class="material-symbols-outlined text-[18px]">hub</span>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-sm">© 2024 TG Copilot. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Terms of Service</a>
 </div>
 </div>
 </div>
 </footer>
 
+```
+
+<div class="fixed inset-0 z-[100] hidden md:hidden" id="mobile-menu">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-background/80 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+<!-- Drawer -->
+<div class="absolute top-0 right-0 h-full w-4/5 max-w-sm glass-card border-l border-outline-variant/30 p-6 flex flex-col" style="transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);">
+<div class="flex justify-between items-center mb-8">
+<div class="text-headline-sm font-display-lg-mobile font-extrabold tracking-tighter text-on-surface">TG Copilot</div>
+<button class="p-2 text-on-surface hover:bg-white/5 rounded-lg transition-colors" id="mobile-menu-close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6"><a class="text-lg text-on-surface-variant font-medium hover:text-on-surface transition-colors py-2" href="#">Home</a>
+<a class="text-lg text-on-surface-variant font-medium hover:text-on-surface transition-colors py-2" href="#">Marketplace</a>
+<a class="text-lg text-on-surface-variant font-medium hover:text-on-surface transition-colors py-2" href="#">Channels</a>
+<a class="text-lg text-on-surface-variant font-medium hover:text-on-surface transition-colors py-2" href="#">Automation</a>
+<a class="text-lg text-on-surface font-bold text-primary py-2 border-l-4 border-primary pl-4" href="#">Engine</a></nav>
+<div class="mt-auto flex flex-col gap-4 pt-8"><button class="w-full py-4 rounded-xl font-medium text-on-surface bg-white/5 hover:bg-white/10 transition-colors">Login</button>
+<button class="w-full py-4 rounded-xl font-bold text-white shadow-lg transition-all duration-300 active:scale-95" style="background-color: #007bff; color: white;">Get Started</button></div>
+</div>
+</div>
+<script class="">
+  const openBtn = document.getElementById('mobile-menu-open');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const menu = document.getElementById('mobile-menu');
+
+  function toggleMenu() {
+    menu.classList.toggle('hidden');
+    document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+  }
+
+  openBtn.addEventListener('click', toggleMenu);
+  closeBtn.addEventListener('click', toggleMenu);
+  backdrop.addEventListener('click', toggleMenu);
+</script>
 
 </body></html>
