@@ -1,0 +1,331 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Verified Channels Channels | TG Copilot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+        body {
+            background-color: #0b0e16;
+            color: #e0e2ed;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(16, 19, 27, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Card Hover Effect */
+        .glass-card:hover {
+            border-color: rgba(173, 199, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(74, 142, 255, 0.1);
+            transform: translateY(-10px) scale(1.02);
+        }
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 222, 233, 0.02) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(74, 142, 255, 0.02) 0px, transparent 50%);
+        }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131b",
+                        "surface": "#10131b",
+                        "surface-container": "#1c2027",
+                        "primary": "#adc7ff",
+                        "primary-container": "#4a8eff",
+                        "on-surface": "#e0e2ed",
+                        "on-surface-variant": "#c1c6d7",
+                        "outline-variant": "#414754",
+                        "secondary-container": "#00eefc",
+                        "surface-container-high": "#272a32",
+                        "surface-container-low": "#181c23",
+                        "surface-container-lowest": "#0b0e16",
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    }
+                },
+            },
+        }
+    </script> 
+</head>
+<body class="bg-background text-on-surface bg-mesh font-['Plus_Jakarta_Sans']">
+
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-background/60 backdrop-blur-xl border-b border-white/10">
+    <div class="text-xl font-bold tracking-tighter text-on-surface">TG Copilot</div>
+    <div class="hidden md:flex items-center gap-10">
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/">Home</a>
+         <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/marketplace">Marketplace</a>
+        <a class="text-white font-medium hover:text-primary transition-colors" href="/channels">Channels</a>
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="#">Automation</a>
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/engine">Engine</a>
+    </div>
+    <div class="flex items-center gap-6 hidden md:flex">
+        <button class="bg-[#007bff] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#0069d9] transition-all">Get Started</button>
+    </div>
+    <button class="md:hidden text-on-surface p-2" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</nav>
+
+<div class="fixed inset-0 bg-surface z-[60] flex flex-col p-margin-mobile invisible opacity-0 lg:hidden transition-all duration-300" id="mobile-menu-overlay">
+    <div class="flex justify-between items-center mb-12">
+        <div class="text-xl font-bold tracking-tighter text-on-surface">TG Copilot</div>
+        <button class="text-on-surface p-2" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="flex flex-col gap-8">
+        <a class="text-2xl text-on-surface-variant" href="/">Home</a>
+         <a class="text-2xl text-on-surface-variant" href="/marketplace">Marketplace</a>
+        <a class="text-2xl text-primary font-bold" href="/channels">Channels</a>
+        <a class="text-2xl text-on-surface-variant" href="#">Automation</a>
+        <a class="text-2xl text-on-surface-variant" href="/engine">Engine</a>
+    </div>
+</div>
+
+<main class="pt-32 pb-20 overflow-x-hidden">
+    <section class="relative pt-24 pb-24 px-margin-mobile mx-auto flex flex-col items-center text-center max-w-7xl" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-container/20 bg-secondary-container/5 text-secondary-container font-medium text-[12px] mb-10">
+            <span class="material-symbols-outlined text-[14px]" data-weight="fill">verified</span>
+            PREMIUM ADVERTISING ACCESS
+        </div>
+        <h1 class="text-4xl md:text-[72px] font-extrabold text-white mb-8 max-w-5xl leading-[1.1] tracking-tighter">
+            Verified Channels Channels.<br>
+            <span class="text-primary-container">Quality Traffic. Curated Lists.</span>
+        </h1>
+        <p class="text-xl text-on-surface-variant max-w-2xl mb-12">
+            Access a curated list of high quality Telegram channels for advertising. Carefully selected and reviewed to ensure reliability and promotional effectiveness.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5">
+            <button class="bg-primary-container px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform text-white">Browse Channels</button>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+        <section class="py-24 px-8 md:px-20 bg-surface-container-low rounded-[48px] border border-outline-variant/20" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="inline-block px-4 py-1 rounded-full bg-error-container/5 border border-error-container/20 text-error font-bold text-[12px]">THE PROBLEM</div>
+                    <h2 class="text-3xl font-bold text-white leading-tight">Searching randomly for Telegram channels takes time.</h2>
+                    <p class="text-lg text-on-surface-variant">Don't deal with unreliable or low quality channels. Manual searching and validation can be risky and inefficient.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[40px] border-secondary-container/20 relative" data-aos="fade-left">
+                    <div class="absolute -top-6 -left-6 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container shadow-lg">
+                        <span class="material-symbols-outlined text-[20px]">verified_user</span>
+                    </div>
+                    <div class="inline-block px-4 py-1 rounded-full bg-secondary-container/5 border border-secondary-container/10 text-secondary-container font-bold text-[12px] mb-6">THE SOLUTION</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Structured & Trusted Environment.</h3>
+                    <p class="text-md text-on-surface-variant leading-relaxed">TG Copilot provides a collection of 100 active Telegram channels. Confidently promote your ads through curated, high-quality relevance.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Categories Available</h2>
+            <p class="text-on-surface-variant">Target specific audiences based on your niche.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-white mb-3">Gambling & Casino</h3>
+                <p class="text-on-surface-variant text-sm">Sports Betting, Casino, and high-engagement gambling niches.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-xl font-bold text-white mb-3">Crypto & Finance</h3>
+                <p class="text-on-surface-variant text-sm">Crypto & Trading, Finance & Investment, and Earning tips.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-8" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-xl font-bold text-white mb-3">Niche Marketing</h3>
+                <p class="text-on-surface-variant text-sm">Adult & Dating, Earning Online, and General Promotions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20" data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Pricing Structure</h3>
+                <div class="text-4xl font-extrabold text-primary-container mb-4">$50 – $500</div>
+                <p class="text-on-surface-variant mb-6 text-sm">Flexible pricing per channel based on size and demand.</p>
+                <ul class="space-y-4 text-sm text-on-surface-variant">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> No manual negotiation</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">check_circle</span> Choose based on goals</li>
+                </ul>
+            </div>
+            <div class="glass-card p-10 rounded-3xl" data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Sample Channels</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-white/5 rounded-lg border border-white/5 text-xs font-mono text-primary">@EliteBettingTips</div>
+                    <div class="p-3 bg-white/5 rounded-lg border border-white/5 text-xs font-mono text-primary">@CryptoWinsDaily</div>
+                    <div class="p-3 bg-white/5 rounded-lg border border-white/5 text-xs font-mono text-primary">@CasinoHighRollers</div>
+                    <div class="p-3 bg-white/5 rounded-lg border border-white/5 text-xs font-mono text-primary">@BettingMastersHub</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl border-t border-white/5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20 text-center">
+                <span class="material-symbols-outlined text-primary-container text-[32px] mb-6">verified</span>
+                <h5 class="text-xl font-bold text-white mb-4">Pre-Verified</h5>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Access trusted channels without manual validation.</p>
+            </div>
+            <div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20 text-center">
+                <span class="material-symbols-outlined text-secondary-container text-[32px] mb-6">schedule</span>
+                <h5 class="text-xl font-bold text-white mb-4">Saves Time</h5>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Skip the searching and go straight to launching.</p>
+            </div>
+            <div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20 text-center">
+                <span class="material-symbols-outlined text-tertiary text-[32px] mb-6">ads_click</span>
+                <h5 class="text-xl font-bold text-white mb-4">Better Targeting</h5>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Reach the right audience through categorization.</p>
+            </div>
+            <div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20 text-center">
+                <span class="material-symbols-outlined text-on-surface-variant text-[32px] mb-6">trending_up</span>
+                <h5 class="text-xl font-bold text-white mb-4">High ROI</h5>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Higher chances of engagement and total reach.</p>
+            </div>
+        </div>
+    </section>
+     <section
+  class="py-40 px-margin-mobile text-center" data-aos="zoom-out">
+        <h2 class="text-5xl font-extrabold text-white mb-8 tracking-tighter">Join the Trusted Channels</h2>
+        <button class="bg-primary-container text-on-primary-container px-14 py-5 rounded-2xl font-bold text-lg hover:scale-110 transition-transform">Access Verified Channels</button>
+    </section>
+</main>
+
+  <!-- Footer Section Start -->
+<footer class="relative w-full l mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,123,255,0.1),transparent)] px-6 py-16 lg:py-20 mt-20 text-white overflow-hidden">
+    
+    <!-- Top Glow Line -->
+    <div class="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 bg-blue-500/30 blur-md"></div>
+
+    <div class="grid w-full gap-12 xl:grid-cols-3 xl:gap-16">
+        <!-- Brand & CTA Column -->
+        <div class="space-y-6">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i data-lucide="send" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">TG <span class="text-blue-500">Copilot</span></span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Telegram marketing ko scale karne ka sabse organized aur fast system. Bulk ads, smart logic, aur chaos-free scaling.
+            </p>
+            
+            <!-- CTA Button -->
+            <div class="pt-4">
+                <a href="#" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all group shadow-lg shadow-blue-600/10">
+                    Get Started Free
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">
+                © 2026 TG Copilot. All rights reserved.
+            </p>
+        </div>
+
+        <!-- Links Grid -->
+        <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+            <!-- Product -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Product</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Bulk Ad Engine</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Smart Generator</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Dashboard</a></li>
+                    <li><a href="#pricing" class="hover:text-blue-400 transition-colors">Pricing</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Company</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#faq" class="hover:text-blue-400 transition-colors">FAQs</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Resources</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Ads Guide</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Help Center</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">API Docs</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Social</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i> Youtube</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize Animations
+    AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 100
+    });
+
+    function toggleMobileMenu() {
+        const overlay = document.getElementById('mobile-menu-overlay');
+        overlay.classList.toggle('invisible');
+        overlay.classList.toggle('opacity-0');
+    }
+</script>
+<!-- Scripts for Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize Animations
+    AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 100
+    });
+
+    function toggleMobileMenu() {
+        const overlay = document.getElementById('mobile-menu-overlay');
+        overlay.classList.toggle('invisible');
+        overlay.classList.toggle('opacity-0');
+    }
+</script>
+</body></html>
