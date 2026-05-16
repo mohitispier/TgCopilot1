@@ -1,0 +1,417 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TG Copilot | The Intelligent Architect of Telegram Ads</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #0b0e16;
+            color: #e0e2ed;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-card {
+            background: rgba(16, 19, 27, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(173, 199, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+        }
+        .bg-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 222, 233, 0.02) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(74, 142, 255, 0.02) 0px, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#10131b",
+                        "surface-dim": "#10131b",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-container": "#1c2027",
+                        "on-primary-fixed": "#001a41",
+                        "inverse-primary": "#005bc0",
+                        "surface-variant": "#31353d",
+                        "surface": "#10131b",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "inverse-surface": "#e0e2ed",
+                        "secondary-container": "#00eefc",
+                        "outline-variant": "#414754",
+                        "on-secondary-fixed": "#002022",
+                        "surface-container-highest": "#31353d",
+                        "on-secondary-container": "#00686f",
+                        "outline": "#8b90a0",
+                        "surface-container-lowest": "#0b0e16",
+                        "surface-tint": "#adc7ff",
+                        "secondary": "#d3fbff",
+                        "on-tertiary": "#571e00",
+                        "tertiary": "#ffb695",
+                        "surface-container-high": "#272a32",
+                        "primary": "#adc7ff",
+                        "on-tertiary-container": "#4c1a00",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-fixed": "#7df4ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#ef6719",
+                        "on-background": "#e0e2ed",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2d3039",
+                        "surface-container-low": "#181c23",
+                        "on-surface": "#e0e2ed",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#4a8eff",
+                        "on-tertiary-fixed": "#351000",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-tertiary-fixed-variant": "#7c2e00",
+                        "on-primary-container": "#00285b",
+                        "on-primary": "#002e68",
+                        "surface-bright": "#363942",
+                        "on-surface-variant": "#c1c6d7",
+                        "on-error": "#690005",
+                        "on-secondary": "#00363a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Hanken Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface bg-mesh font-['Plus_Jakarta_Sans']">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-background/60 backdrop-blur-xl border-b border-white/10">
+    <div class="text-xl font-bold tracking-tighter text-on-surface flex-shrink-0 min-w-[120px]">TG Copilot</div>
+    
+    <div class="hidden md:flex flex-grow justify-center items-center gap-10">
+        <a class="text-white font-medium hover:text-primary transition-colors" href="/">Home</a>
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/marketplace">Marketplace</a>
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/channels">Channels</a>
+        <a class="text-on-surface-variant font-medium hover:text-white transition-colors" href="/engine">Engine</a>
+    </div>
+    
+    <div class="hidden md:flex min-w-[120px] justify-end">
+        </div>
+    
+    <button class="md:hidden text-on-surface p-2 focus:outline-none" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+</nav>
+
+<div class="fixed inset-0 bg-surface z-[60] flex flex-col p-margin-mobile invisible opacity-0 lg:hidden transition-all duration-300" id="mobile-menu-overlay">
+<div class="flex justify-between items-center mb-12">
+<div class="text-xl font-bold tracking-tighter text-on-surface">TG Copilot</div>
+<button class="text-on-surface p-2" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-8 mb-12">
+<a class="text-2xl text-primary font-bold" href="/">Home</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="/marketplace">Marketplace</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="/channels">Channels</a>
+<a class="text-2xl text-on-surface-variant hover:text-primary transition-colors" href="/engine">Engine</a>
+</div>
+<div class="flex flex-col gap-4 mt-auto">
+</div>
+</div>
+
+<script>
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobile-menu-overlay');
+            overlay.classList.toggle('invisible');
+            overlay.classList.toggle('opacity-0');
+        }
+    </script>
+<main class="pt-32 pb-20 overflow-x-hidden">
+
+<section class="relative pt-44 pb-24 px-margin-mobile mx-auto flex flex-col items-center text-center max-w-7xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary-container/20 bg-secondary-container/5 text-secondary-container font-medium text-[12px] mb-10">
+<span class="material-symbols-outlined text-[14px]" data-weight="fill">bolt</span>
+        NEXT-GEN TELEGRAM ADS ARCHITECT
+    </div>
+<h1 class="text-display-lg-mobile md:text-[84px] font-extrabold text-white mb-8 max-w-5xl leading-[1.1] tracking-tighter">
+        Automate Your Ads.<br>
+<span class="text-primary-container">Scale Faster with AI.</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mb-12">
+        TG Copilot helps you create, launch and manage high performing Telegram ads using powerful AI tools and smart automation and no experience required.
+    </p>
+<div class="flex flex-col sm:flex-row gap-5 mb-20">
+<button class="bg-primary-container px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary-container/20 text-white">Get Started</button>
+<button class="bg-surface-container-high text-on-surface border border-outline-variant/30 px-10 py-4 rounded-xl font-bold hover:bg-surface-container-highest transition-colors">Try Free Demo</button>
+</div>
+<div class="w-full max-w-5xl glass-card rounded-[32px] p-4 border border-white/5 relative bg-black/40">
+<div class="bg-background rounded-[24px] overflow-hidden aspect-[16/9] border border-white/5">
+<img alt="TG Copilot Dashboard" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiFG_T7ZGV1-SANNuq5xzMkexENztl9phRv-iH-yBzNWGK0WY4SraETRo4KP3FKfdnu7lorgzPQ-nC2Ug012RCUl_F5i-VO-szf_EMxrESCewxyP96Bo4Qjo6NMODZ7DYp19MdLMklv0-NXq9eqTkkgqxt1WlXyGik8ErcWzOcMjYvfiSWty2uLSib47yqRxKYdl_dxWhuFqk8BY80KwWHH6fcgZGHtBE2aHGzX6qEmg7Tl0cDTDdeFota7hsyuKMqJPUHJWTyhM4">
+</div>
+<div class="absolute top-1/4 -right-12 glass-card p-6 rounded-2xl hidden lg:block border-white/10 shadow-2xl">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-secondary-container">trending_up</span>
+<span class="text-[12px] font-bold text-white/70">ROI BOOST</span>
+</div>
+<div class="text-3xl font-bold text-primary">+284%</div>
+</div>
+</div>
+</section>
+
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+<section class="py-24 px-8 md:px-20 bg-surface-container-low rounded-[48px] border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="space-y-8">
+<div class="inline-block px-4 py-1 rounded-full bg-error-container/5 border border-error-container/20 text-error font-bold text-[12px]">THE PROBLEM</div>
+<h2 class="text-headline-md font-bold text-white leading-tight">Creating ads manually takes time, effort and constant testing.</h2>
+<p class="text-body-lg text-on-surface-variant">Managing multiple Telegram channels and campaigns can quickly become overwhelming.</p>
+</div>
+<div class="glass-card p-10 rounded-[40px] border-secondary-container/20 relative">
+<div class="absolute -top-6 -left-6 w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container shadow-lg shadow-secondary-container/20">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-container/5 border border-secondary-container/10 text-secondary-container font-bold text-[12px] mb-6">THE SOLUTION</div>
+<h3 class="text-2xl font-bold text-white mb-4">TG Copilot simplifies everything.</h3>
+<p class="text-body-md text-on-surface-variant leading-relaxed">With AI powered automation, you can generate ads in seconds, manage campaigns easily and scale your marketing without extra effort.</p>
+</div>
+</div>
+</section>
+</div>
+
+<section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold text-white mb-4">Engineered for Dominance</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Our powerful suite of AI tools designed to provide absolute control over the Telegram advertising landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">auto_fix_high</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Ad Creation Engine</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Instantly generate multiple ad creatives with AI based on your goals.</p>
+</div>
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">storefront</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Ad Marketplace</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Buy, manage and deploy ads from one place with optimized pricing.</p>
+</div>
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">verified</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Verified Network</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Curated list of approved channels with high engagement and real users.</p>
+</div>
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">psychology</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Strategic Consultation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Expert-level insights and data analysis to improve your ad performance.</p>
+</div>
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">rocket</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">All-in-One Growth Suite</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Everything you need from creation to scaling your campaigns effortlessly.</p>
+</div>
+<div class="glass-card rounded-2xl p-8 bg-surface-container border-outline-variant/30">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center border border-white/5 mb-6">
+<span class="material-symbols-outlined text-white/70">extension</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-3">Chrome Extension</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Work directly from the browser with our powerful automation extension.</p>
+</div>
+</div>
+</section>
+
+<section class="py-32 relative bg-surface-container-lowest/50 border-y border-white/5 w-full">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-4xl font-extrabold text-white mb-4">How It Works</h2>
+<p class="text-on-surface-variant">Launch high-performing campaigns in four precision steps.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center px-6">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">1</div>
+<h4 class="text-lg font-bold text-white mb-3">Define Idea</h4>
+<p class="text-on-surface-variant text-sm">Enter your product or ad idea to the platform.</p>
+</div>
+<div class="flex flex-col items-center text-center px-6">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">2</div>
+<h4 class="text-lg font-bold text-white mb-3">Generate</h4>
+<p class="text-on-surface-variant text-sm">Generate ad variations using our advanced AI.</p>
+</div>
+<div class="flex flex-col items-center text-center px-6">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">3</div>
+<h4 class="text-lg font-bold text-white mb-3">Launch</h4>
+<p class="text-on-surface-variant text-sm">Choose Telegram channels and launch your ads.</p>
+</div>
+<div class="flex flex-col items-center text-center px-6">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center mb-8 text-xl font-bold text-white bg-surface-container shadow-2xl">4</div>
+<h4 class="text-lg font-bold text-white mb-3">Optimize</h4>
+<p class="text-on-surface-variant text-sm">Track performance and optimize for maximum ROI.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-32 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl">
+<div class="bg-surface-container-low rounded-[48px] border border-outline-variant/20 p-8 md:p-20 flex flex-col md:row items-center gap-20">
+<div class="flex-1">
+<div class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-white font-bold text-[12px] mb-8">PREMIUM FEATURE</div>
+<h2 class="text-[40px] font-extrabold text-white mb-8 leading-tight tracking-tighter">Channel Discovery Engine</h2>
+<p class="text-body-lg text-on-surface-variant mb-12">
+                Find high performing Telegram channels based on niche, engagement rate and audience quality. Uncover hidden opportunities before your competitors do.
+            </p>
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold hover:scale-105 transition-transform flex items-center gap-4">
+                Unlock Access <span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+</div>
+<div class="flex-1 w-full max-w-md">
+<div class="glass-card aspect-square rounded-[40px] border-white/5 flex flex-col justify-center items-center text-center p-12 bg-black/40">
+<div class="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-8 border border-white/10 shadow-inner">
+<span class="material-symbols-outlined text-[40px] text-white/40">lock</span>
+</div>
+<h4 class="text-xl font-bold text-white mb-4">Premium Content</h4>
+<p class="text-on-surface-variant/70 text-sm">Full analysis and channel metrics are locked. Upgrade to access the complete engine.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 px-margin-mobile mx-auto md:px-margin-desktop max-w-7xl border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container text-[32px] mb-6">schedule</span>
+<h5 class="text-xl font-bold text-white mb-4">Save Hours</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Automate repetitive tasks and save hours of manual ad management every day.</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary-container text-[32px] mb-6">trending_up</span>
+<h5 class="text-xl font-bold text-white mb-4">Scale Instantly</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Deploy your ads across hundreds of channels with a single click and scale your reach.</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-tertiary text-[32px] mb-6">monitoring</span>
+<h5 class="text-xl font-bold text-white mb-4">AI Optimization</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Improve your ad performance continuously with real-time AI insights and tweaks.</p>
+</div>
+<div class="bg-surface-container-low p-10 rounded-3xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px] mb-6">speed</span>
+<h5 class="text-xl font-bold text-white mb-4">No Tech Needed</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">No technical or marketing experience needed. Our AI handles the complexity for you.</p>
+</div>
+</div>
+</section>
+
+<section class="py-40 px-margin-mobile text-center bg-surface-container-lowest/30 w-full">
+<div class="max-w-7xl mx-auto md:px-margin-desktop">
+<h2 class="text-5xl font-extrabold text-white mb-8 tracking-tighter">Start Creating Smarter Ads Today</h2>
+<p class="text-body-lg text-on-surface-variant mb-14 max-w-2xl mx-auto">Join users who are already scaling their ads with TG Copilot and dominating the Telegram market.</p>
+<button class="bg-primary-container text-on-primary-container px-14 py-5 rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl shadow-primary-container/20">Get Started Now</button>
+</div>
+</section>
+</main>
+
+<footer class="relative w-full l mx-auto flex flex-col items-center justify-center rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/10 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,123,255,0.1),transparent)] px-6 py-16 lg:py-20 mt-20 text-white overflow-hidden">
+    <div class="absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 bg-blue-500/30 blur-md"></div>
+    <div class="grid w-full gap-12 xl:grid-cols-3 xl:gap-16">
+        <div class="space-y-6">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i data-lucide="send" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">TG <span class="text-blue-500">Copilot</span></span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Telegram marketing ko scale karne ka sabse organized aur fast system. Bulk ads, smart logic, aur chaos-free scaling.
+            </p>
+            <div class="pt-4">
+                <a href="#" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all group shadow-lg shadow-blue-600/10">
+                    Get Started Free
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-[10px] text-gray-600 uppercase tracking-widest">
+                © 2026 TG Copilot. All rights reserved.
+            </p>
+        </div>
+        <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Product</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Bulk Ad Engine</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Marketplace</a></li>
+                    <li><a href="#features" class="hover:text-blue-400 transition-colors">Automation</a></li>
+                    <li><a href="#pricing" class="hover:text-blue-400 transition-colors">Home</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Company</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#faq" class="hover:text-blue-400 transition-colors">FAQs</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Resources</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Ads Guide</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">Help Center</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition-colors">API Docs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-6 underline decoration-blue-500 decoration-2 underline-offset-8">Social</h3>
+                <ul class="text-gray-400 space-y-3 text-sm">
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i> Youtube</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:text-blue-400 transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
